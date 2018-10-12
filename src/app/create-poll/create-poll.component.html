@@ -1,0 +1,76 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+
+  <br>
+  <br>
+
+  <div class="text-center text-capitalize text-primary">
+    <h2>
+      <strong class="text-danger" *ngIf="!this.topic"> you</strong>
+      <strong class="text-danger" *ngIf="this.topic"> {{this.topic}}</strong> !
+    </h2>
+  </div>
+
+  <br>
+  <br>
+
+
+  <div class="container">
+
+    <div class="input-group mb-2">
+      <input type="text" class="form-control" [disabled]="this.topicAdded" placeholder="Put Your topic Here" [(ngModel)]="this.topic"
+        aria-label="Put Your Name Here" aria-describedby="button-addon2" *ngIf="!this.topicAdded">
+
+
+    </div>
+
+    <!--
+<div class="input-group mb-2">
+      <input type="text" class="form-control" placeholder="Your Options here" aria-label="Put Your Name Here" aria-describedby="button-addon2"
+        [(ngModel)]="this.choice">
+      <div class="input-group-append">
+        <button class="btn btn-primary" [disabled]="!this.choice" type="button" id="button-addon2" (click)="this.createOption()">Add Option</button>
+      </div>
+    </div>
+-->
+
+
+    <div class="input-group mb-2">
+      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" #numberOfOptions>
+        <option selected>Choose...</option>
+        <option value="1" (click)="this.createOption(numberOfOptions.value)">One</option>
+        <option value="2"(click)="this.createOption(numberOfOptions.value)">Two</option>
+        <option value="3"(click)="this.createOption(numberOfOptions.value)">Three</option>
+        <option value="4"(click)="this.createOption(numberOfOptions.value)">Four</option>
+        <option value="5"(click)="this.createOption(numberOfOptions.value)">Five</option>
+        <option value="6"(click)="this.createOption(numberOfOptions.value)">Six</option>
+        <option value="7"(click)="this.createOption(numberOfOptions.value)">Seven</option>
+        <option value="8"(click)="this.createOption(numberOfOptions.value)">Eight</option>
+        <option value="9"(click)="this.createOption(numberOfOptions.value)">Nine</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="this.createOption(numberOfOptions.value)">Add Options</button>
+      </div>
+    </div>
+
+
+
+    <!--button to generate sharable link-->
+    <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bd-example-modal-sm"
+      type="button" id="button-addon2" (click)="this.createLink()" routerLink="copylink">Create my poll</button>
+  </div>
+
+  <br>
+  <!--User Options List-->
+  <div class="container">
+    <ul class="list-group">
+      <input type="text" class="list-group-item "  placeholder="Your Options here" aria-label="Put Your Name Here"
+        aria-describedby="button-addon2" [(ngModel)]="this.options[i].choice" *ngFor="let items of this.options; let i = index">
+    </ul>
+  </div>
+
+  <br>
+  <br>
+
+
+</div>

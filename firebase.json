@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/cast-the-vote-frontend",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

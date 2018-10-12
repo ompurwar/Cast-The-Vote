@@ -1,0 +1,18 @@
+<div class="container align-content-center">
+  <br><br>
+  <h1 class="text-center" *ngFor="let item of mydata.poll.options; let i = index" >{{item.choice}}</h1>
+  <br><br>
+  <input class="form-control" type="text" #newname placeholder="Name" />
+  <br>
+  <input class="form-control" type="text" #newsize placeholder="Size" />
+  <br><br>
+  <!--
+  <button class="btn btn-primary" (click)="save(newname.value)">Set Name</button>
+  <br><br>
+  -->
+  <button class="btn btn-primary"  (click)="this.update(newsize.value)">Update Size</button>
+  <br><br>
+  <!---
+    <button class="btn btn-primary"  (click)="delete()">Delete</button>
+  -->
+</div>

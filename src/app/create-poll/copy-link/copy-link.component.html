@@ -1,0 +1,26 @@
+<br>
+<div class="container">
+  <h1 class="text-capitalize text-center text-primary">Just
+    <strong class="text-info">copy</strong> the
+    <strong class="text-warning">link</strong> and
+    <strong class="text-warning">share</strong> with your
+    <br>
+    <strong class="text-danger">friends!</strong>
+  </h1>
+</div>
+
+<br>
+<h1 class="text-center">🙏</h1>
+<br>
+
+
+<div class="container">
+  <div class="input-group mb-3 ">
+    <input type="text" class="input-group form-control" [value]="this.sharedData.tempSharableLink"  aria-describedby="basic-addon2"
+      id="textToCopy" #userinput>
+    <div class="input-group-append">
+      <span class="input-group-text" [ngClass]="this.copied?'btn-success':''" id="basic-addon2"  (click)="this.onClickCopy(userinput)">{{this.btnDisplayText}}</span>
+    </div>
+  </div>
+</div>
+

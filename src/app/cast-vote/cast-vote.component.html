@@ -1,0 +1,39 @@
+<div class="container" *ngIf="!this.alreadyVoted">
+
+  <br>
+  <br>
+
+  <div class="text-center text-capitalize text-primary">
+    <h2>
+      {{this.poll.topic}}!
+    </h2>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()" routerLink="/">
+      Submit My Vote
+     </button>
+  </div>
+
+  <div class="container">
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item disabled" [ngClass]="this.vote[i]? 'active': ''" *ngFor="let items of this.poll.options; let i = index"
+        (click)="this.castVote(i)">{{i+':\t'+items.choice+' ✔️ ✖️'}}</li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()" >Submit My Vote</button>
+  </div>
+
+  <br>
+  <br>
+</div>
+
+<h1 class="text-capitalize text-center text-danger" *ngIf="this.alreadyVoted">You have already voted</h1>
