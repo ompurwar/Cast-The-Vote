@@ -1,45 +1,52 @@
 <div class="container" *ngIf="!this.alreadyVoted">
 
-  <br>
-  <br>
+	<br>
+	<br>
 
-  <div class="text-center text-capitalize text-primary">
-    <h2>
-      {{this.poll.topic}}!
-    </h2>
-  </div>
+	<div class="text-center text-capitalize text-primary">
+		<h2>
+			{{this.poll.topic}}!
+		</h2>
+	</div>
 
-  <br>
+	<br>
 
-  <div class="container">
-    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()" routerLink="/">
-      Submit My Vote
-     </button>
-  </div>
+	<div class="container">
+		<button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()" routerLink="/">
+			Submit My Vote
+		</button>
+	</div>
 
-  <div class="container">
-    <br>
-    <ul class="list-group">
-      <li class="list-group-item " [ngClass]="this.vote[i]? 'active': ''" *ngFor="let items of this.poll.options; let i = index;" (click)="castVote(i)">{{i+':\t'+items.choice+' ✔️ ✖️'}}</li>
-    </ul>
-  </div>
+	<div class="container">
+		<br>
+		<ul class="list-group">
+			<li class="list-group-item " [ngClass]="this.vote[i]? 'active': ''"
+				*ngFor="let items of this.poll.options; let i = index;" (click)="castVote(i)">
+				{{i+':\t'+items.choice+' ✔️ ✖️'}}</li>
+		</ul>
+	</div>
 
-  <br>
-  <br>
+	<br>
+	<br>
 
-  <div class="container">
-    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()" >Submit My Vote</button>
-  </div>
+	<div class="container">
+		<button type="button" class="btn btn-primary btn-lg btn-block" (click)="this.updateVote()">Submit My
+			Vote</button>
+	</div>
 
-  <br>
-  <br>
+	<br>
+	<br>
 </div>
 
-  <div class="container text-center py-7" *ngIf="this.alreadyVoted">
-	  <h1 class="text-capitalize text-center text-danger" >You have already voted</h1>
-
-    <button type="button" class="btn btn-primary btn-lg " routerLink="/" > 
-		<span class="inner--text">Home </span>  
-		<span class="inner--icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-		</button>
-  </div>
+<div class="container  " *ngIf="this.alreadyVoted">
+	<div class="row  py-5">
+		<div class="col text-center">
+			<h1 class="text-capitalize text-center text-danger">You have already voted</h1>
+			<br>
+			<button type="button" class="btn btn-outline-primary btn-lg " routerLink="/">
+				<span class="inner--text">Home </span>
+				<span class="inner--icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+			</button>
+		</div>
+	</div>
+</div>
