@@ -20,8 +20,7 @@
   <div class="container">
     <br>
     <ul class="list-group">
-      <li class="list-group-item disabled" [ngClass]="this.vote[i]? 'active': ''" *ngFor="let items of this.poll.options; let i = index"
-        (click)="this.castVote(i)">{{i+':\t'+items.choice+' ✔️ ✖️'}}</li>
+      <li class="list-group-item " [ngClass]="this.vote[i]? 'active': ''" *ngFor="let items of this.poll.options; let i = index;" (click)="castVote(i)">{{i+':\t'+items.choice+' ✔️ ✖️'}}</li>
     </ul>
   </div>
 
@@ -36,4 +35,11 @@
   <br>
 </div>
 
-<h1 class="text-capitalize text-center text-danger" *ngIf="this.alreadyVoted">You have already voted</h1>
+  <div class="container text-center py-7" *ngIf="this.alreadyVoted">
+	  <h1 class="text-capitalize text-center text-danger" >You have already voted</h1>
+
+    <button type="button" class="btn btn-primary btn-lg " routerLink="/" > 
+		<span class="inner--text">Home </span>  
+		<span class="inner--icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+		</button>
+  </div>
