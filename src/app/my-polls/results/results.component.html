@@ -1,44 +1,58 @@
 <div class="container align-content-center">
 
-    <br>
+	<br>
 
-    <div class="container">
-        <div class="row text-capitalize text-center">
-            <h1 class="text-primary offset-1 " *ngIf="!this.poll.topic">Loading topic........</h1>
-            <h1 class="text-primary" *ngIf="this.poll.topic">{{this.poll.topic}}</h1>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row text-capitalize text-center">
+			<h1 class="text-primary offset-1 " *ngIf="!this.poll.topic">Loading topic........</h1>
+			<h2 class="text-primary" *ngIf="this.poll.topic">{{this.poll.topic}}</h2>
+		</div>
+	</div>
 
-    <hr>
-    <br>
+	<hr>
+	<br>
 
-    <div class="container ">
-        <div class="card rounded" style="width: 18rem;">
-            <canvas id="canvas">{{this.chart}}</canvas>
-            <div class="card-body">
-                <h5 class="card-title">{{this.cardTitle}}</h5>
-                <p class="card-text"></p>
-                <div class="btn-group " role="group" aria-label="First group">
-                    <button class="btn btn-primary" (click)="this.toggleCharts()">Show {{this.btnTitle}}</button>
-                    <button type="button" class="btn btn-outline-primary" (click)="this.onShare()">
-                      <img src="../../../assets/icons/icons8-share-50.png" width="20" height="20" alt="Share">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container ">
+		<div class="card rounded w-100">
+			<canvas id="canvas">{{this.chart}}</canvas>
+			<div class="card-body">
+				<h5 class="card-title">{{this.cardTitle}}</h5>
+				<p class="card-text"></p>
 
-    <br>
-    <hr>
-    <br>
+				<div class="btn-group " role="group" aria-label="First group">
+					<button class="btn btn-primary" (click)="this.toggleCharts()">Show {{this.btnTitle}}</button>
+					<button type="button" class="btn btn-outline-primary" (click)="this.onShare()">
+						<span class="inner--icon">
+							<img src="../../../assets/icons/icons8-share-50.png" width="20" height="20" alt="Share">
+						</span>
+					</button>
+				</div>
+				<div class="btn-group ml-1" role="group" aria-label="Second group">
 
-    <div class="container">
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of this.poll.options;let i = index">
-                {{item}}
-                <span class="badge badge-primary badge-pill">{{this.poll.votes[i]}}</span>
-            </li>
-        </ul>
-    </div>
+					<button type="button" class="btn btn-outline-primary" routerLink='/'>
+						<span class="inner--icon">
+							<i class="material-icons">
+								home
+							</i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<hr>
+	<br>
+
+	<div class="container">
+		<ul class="list-group">
+			<li class="list-group-item d-flex justify-content-between align-items-center"
+				*ngFor="let item of this.poll.options;let i = index">
+				{{item}}
+				<span class="badge badge-primary badge-pill">{{this.poll.votes[i]}}</span>
+			</li>
+		</ul>
+	</div>
 
 </div>
