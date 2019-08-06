@@ -5,9 +5,9 @@
 <hr>
 <div class="container">
   <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center text-capitalize text-secondary" *ngFor="let item of this.polls;let i = index">
+    <li class="list-group-item d-flex justify-content-between align-items-center text-capitalize text-secondary " *ngFor="let item of this.polls;let i = index">
       {{item.topic}}
-      <button type="button" class="btn btn-primary" (click)="this.showResults(item.key)">show</button>
+      <button type="button" class="btn btn-outline-primary rounder-left-0" (click)="this.showResults(item.key)">show</button>
     </li>
   </ul>
 </div>
